@@ -1,0 +1,35 @@
+{
+  "name": "s3",
+  "version": "1.0.0",
+  "description": "This web application is for managing data on AWS S3",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shahmeetn/Node-Tutorials.git"
+  },
+  "keywords": [
+    "AWS"
+  ],
+  "author": "shahmeetn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shahmeetn/Node-Tutorials/issues"
+  },
+  "homepage": "https://github.com/shahmeetn/Node-Tutorials#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.17.2",
+    "connect-flash": "^0.1.1",
+    "ejs": "^2.5.7",
+    "express": "^4.15.4",
+    "express-messages": "^1.0.1",
+    "express-session": "^1.15.5",
+    "express-validator": "^3.2.1",
+    "mongoose": "^4.11.6",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0"
+  }
+}
