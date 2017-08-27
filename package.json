@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/shahmeetn/Node-Tutorials#readme",
   "dependencies": {
+    "aws-sdk": "^2.104.0",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.17.2",
     "connect-flash": "^0.1.1",
