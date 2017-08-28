@@ -13,8 +13,8 @@ const config = require('./config/database');
 
 const port = process.env.PORT || 3000;
 
-global.accessKey = 'AKIAIFCQLGGBJA4SBQKQ';
-global.secretKey = '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';
+global.accessKey = '';
+global.secretKey = '';
 
 mongoose.connect(config.database);
 
