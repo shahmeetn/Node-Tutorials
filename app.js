@@ -10,6 +10,7 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
 const config = require('./config/database');
+const http = require('http');
 
 const port = process.env.PORT || 3000;
 
@@ -101,6 +102,15 @@ require('./routes/home')(app, passport);
 require('./routes/profile')(app, passport);
 
 // Start Server
-app.listen(port, function () {
-    console.log('Server started on port 3000...');
+var server = http.createServer(app);
+server.listen(port, function () {
+  console.log('HTTP server listening on port ' + port);
 });
+
+//Socket init
+const io = require('socket.io')(server);
+io.on('connection', require('./routes/socket'));
+
+// app.listen(port, function () {
+//     console.log('Server started on port 3000...');
+// });

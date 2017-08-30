@@ -33,6 +33,8 @@
     "mongoose": "^4.11.6",
     "morgan": "^1.8.2",
     "passport": "^0.4.0",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "opencv": "git+https://github.com/peterbraden/node-opencv.git",
+    "socket.io": "1.2.1"
   }
 }
