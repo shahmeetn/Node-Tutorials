@@ -99,7 +99,8 @@ app.get('*', function (req, res, next) {
 
 // Route Files
 require('./routes/home')(app, passport);
-require('./routes/profile')(app, passport);
+require('./routes/image')(app, passport);
+require('./routes/video')(app, passport);
 
 // Start Server
 var server = http.createServer(app);
@@ -110,7 +111,3 @@ server.listen(port, function () {
 //Socket init
 const io = require('socket.io')(server);
 io.on('connection', require('./routes/socket'));
-
-// app.listen(port, function () {
-//     console.log('Server started on port 3000...');
-// });
