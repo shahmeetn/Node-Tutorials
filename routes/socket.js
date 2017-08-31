@@ -1,4 +1,16 @@
 var cv = require('opencv');
+const AWS = require('aws-sdk');
+
+var fs = require('fs');
+var bitmap = fs.readFileSync('/home/meets/Pictures/Actor.jpg');
+
+AWS.config.update({
+    "accessKeyId": 'AKIAIHOOZKFB3WG3KP4Q',
+    "secretAccessKey": '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',
+    "region": 'us-east-1'
+});
+
+var rekognition = new AWS.Rekognition();
 
 // camera properties
 var camWidth = 320;
@@ -28,8 +40,41 @@ module.exports = function (socket) {
           im.rectangle([face.x, face.y], [face.width, face.height], rectColor, rectThickness);
         }
 
+
         socket.emit('frame', { buffer: im.toBuffer() });
       });
     });
   }, camInterval);
 };
+
+function insertintoCOllection() {
+    var params = {
+        CollectionId: 'surveillance', /* required */
+        Image: { /* required */
+            Bytes: bitmap
+        },
+        ExternalImageId: 'surveillance'
+    };
+    rekognition.indexFaces(params, function (err, data) {
+        if (err) console.log(err, err.stack); // an error occurred
+        else console.log(data);           // successful response
+        var params = {
+            CollectionId: "surveillance"
+        };
+        rekognition.listFaces(params, function (err, data) {
+            if (err) console.log(err, err.stack); // an error occurred
+            else console.log(data);           // successful response
+            var params = {
+                CollectionId: 'surveillance', /* required */
+                Image: { /* required */
+                    Bytes: bitmap
+                },
+                FaceMatchThreshold: 95
+            };
+            rekognition.searchFacesByImage(params, function (err, data) {
+                if (err) console.log(err, err.stack); // an error occurred
+                else console.log(data);           // successful response
+            });
+        });
+    });
+}
