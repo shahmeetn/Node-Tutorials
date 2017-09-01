@@ -1,34 +1,55 @@
 <!doctype html>
 <html>
 <% include header%>
-<body>
-<div class="container">
-<div class="col-sm-6 col-sm-offset-3">
 
-    <h1><span class="fa fa-sign-in"></span> Login</h1>
+    <body>
+        <div id="wapper">
 
-    <% if (message.length > 0) { %>
-        <div class="alert alert-danger"><%= message %></div>
-    <% } %>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <section class="form-dark">
+                            <div class="card card-image" style="background-image:url(/images/bg.jpg);  background-size: 100% auto;">
+                            <div class="text-white rgba-stylish-strong py-5 px-5 z-depth-4"> 
 
-    <!-- LOGIN FORM -->
-    <form action="/login" method="post">
-        <div class="form-group">
-            <label>Email</label>
-            <input type="text" class="form-control" name="email">
+                                <h1><span class="fa fa-sign-in"></span> Login</h1>
+
+                                <% if (message.length > 0) { %>
+                                    <div class="alert alert-danger">
+                                        <%= message %>
+                                    </div>
+                                    <% } %>
+
+                                        <!-- LOGIN FORM -->
+                                        <form action="/login" method="post">
+                                            <div class="md-form">
+                                                <i class="fa fa-envelope prefix"></i>
+                                                <label>Email</label>
+                                                <input type="text" class="form-control" name="email">
+                                            </div>
+                                            <div class="md-form">
+                                                <i class="fa fa-lock prefix"></i>
+                                                <label>Password</label>
+                                                <input type="password" class="form-control" name="password">
+                                            </div>
+
+                                            <button type="submit" class="btn btn-warning btn-lg">Login</button>
+                                        </form>
+
+                                        <hr>
+                                        <p>Or go <a href="/">home</a>.</p>
+
+                                        </div>
+                                        </div>
+                        </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
-        <div class="form-group">
-            <label>Password</label>
-            <input type="password" class="form-control" name="password">
-        </div>
+    </body>
+    <% include footer%>
 
-        <button type="submit" class="btn btn-warning btn-lg">Login</button>
-    </form>
-
-    <hr>
-    <p>Or go <a href="/">home</a>.</p>
-
-</div>
-</div>
-</body>
 </html>
