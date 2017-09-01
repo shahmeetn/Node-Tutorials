@@ -1,24 +1,11 @@
 {
-  "name": "s3",
+  "name": "the_marauders_map",
   "version": "1.0.0",
-  "description": "This web application is for managing data on AWS S3",
+  "description": "This web app is useb to ientify employees live location",
   "main": "app.js",
   "scripts": {
     "start": "node app"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/shahmeetn/Node-Tutorials.git"
-  },
-  "keywords": [
-    "AWS"
-  ],
-  "author": "shahmeetn",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/shahmeetn/Node-Tutorials/issues"
-  },
-  "homepage": "https://github.com/shahmeetn/Node-Tutorials#readme",
   "dependencies": {
     "aws-sdk": "^2.104.0",
     "bcrypt-nodejs": "0.0.3",

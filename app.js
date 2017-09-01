@@ -1,3 +1,4 @@
+// node modules import
 const express = require('express');
 const app = express();
 const path = require('path');
@@ -12,13 +13,17 @@ const passport = require('passport');
 const config = require('./config/database');
 const http = require('http');
 
+//app port
 const port = process.env.PORT || 3000;
 
+//aws credentials
 global.accessKey = '';
 global.secretKey = '';
 
+//mongodb connection with mangoose
 mongoose.connect(config.database);
 
+//create mongoose connection
 let db = mongoose.connection;
 
 // Check connection
@@ -65,6 +70,7 @@ app.use(session({
 // Express Messages Middleware
 app.use(flash());
 
+//flash error and success mssages
 app.use(function (req, res, next) {
     res.locals.messages = require('express-messages')(req, res);
     next();
@@ -101,11 +107,12 @@ app.get('*', function (req, res, next) {
 require('./routes/home')(app, passport);
 require('./routes/image')(app, passport);
 require('./routes/video')(app, passport);
+require('./routes/map')(app, passport);
 
 // Start Server
 var server = http.createServer(app);
 server.listen(port, function () {
-  console.log('HTTP server listening on port ' + port);
+    console.log('HTTP server listening on port ' + port);
 });
 
 //Socket init

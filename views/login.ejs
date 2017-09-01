@@ -2,17 +2,23 @@
 <html>
 <% include header%>
 
-    <body>
+    <body class="loginpage">
         <div id="wapper">
 
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
+                        <br>
+                        <br>
+                        <br>
+                        
                         <section class="form-dark">
                             <div class="card card-image" style="background-image:url(/images/bg.jpg);  background-size: 100% auto;">
                             <div class="text-white rgba-stylish-strong py-5 px-5 z-depth-4"> 
 
-                                <h1><span class="fa fa-sign-in"></span> Login</h1>
+                                <h1><img src="images/slytherin_logo.png" width="120" /></h1>
+                                <br>
+                                <br>
 
                                 <% if (message.length > 0) { %>
                                     <div class="alert alert-danger">
@@ -33,11 +39,11 @@
                                                 <input type="password" class="form-control" name="password">
                                             </div>
 
-                                            <button type="submit" class="btn btn-warning btn-lg">Login</button>
+                                            <button type="submit" class="btn btn-success btn-block btn-rounded z-depth-1 waves-effect waves-light">Login</button>
                                         </form>
 
-                                        <hr>
-                                        <p>Or go <a href="/">home</a>.</p>
+                                        <br>
+                                        <p class="center-text">Or go <a class="gohome" href="/">Home</a>.</p>
 
                                         </div>
                                         </div>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<% include header%>
+    <script type="text/javascript">
+        var elem = document.createElement("img");
+        elem.setAttribute("src", "images/hydrangeas.jpg");
+        elem.setAttribute("height", "768");
+        elem.setAttribute("width", "1024");
+        elem.setAttribute("alt", "Flower");
+        document.getElementById("showimage").appendChild(elem);
+    </script>
+
+    <body class="mappage">
+        <div class="page-header text-center">
+
+ <div class="hmenu">
+                <ul>
+                    <li><a class="btn btn-default btn-sm" href="/image">Upload Image</a></li>
+                    <li><a class="btn btn-default btn-sm" href="/video">View Video</a></li>
+                    <li><a class="btn btn-default btn-sm" href="/map">View Map</a></li>
+                    <li><a href="/logout" class="btn btn-default btn-sm">Logout</a></li>
+
+                </ul>
+            </div>
+
+            <h1><img width="40" src="images/slytherin_logo.png"/> Slytherin</h1>
+           <br>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="bg">
+               <table class="table">
+                   <thead>
+                    <tr>
+                    <th>Room 1</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%rooms.forEach(function(data){%>
+                        <tr>
+                            <td>
+                                <%=data.local.person%>
+                            </td>
+                        </tr>
+                    <%});%>
+                    </tbody>
+                </table>
+            </div>
+            </div>
+        </div>
+        <% include footer%>
+    </body>
+
+</html>

@@ -1,12 +1,21 @@
-body{ margin:0; padding:0; font-size:16px;font-family: 'Lato', sans-serif; background:#eee;}
+body{ overflow-x:hidden; margin:0; padding:0; font-size:16px;font-family: 'Lato', sans-serif; background:rgba(0, 0, 0, 0) url("../images/bg.jpg") repeat scroll 0 0 / 100% auto;}
 a{-webkit-transition:all 0.5s ease;transition:all 0.5s ease;outline:none;text-decoration:none;}
 #wapper {width: 100%;margin: 0;	padding: 0;	float: left;}
 #wapper .col-md-12 .form-dark {	max-width: 500px;	width: 100%;	margin:100px auto 0px auto;	padding: 0;}
+
+/****** Home page css *************/
+.homepage .form-dark, .loginpage .form-dark h1{ text-align: center; }
+
+.loginpage .center-text{text-align: center;  color: #fff;}
+.loginpage .center-text a{color: #3cecec;}
+.loginpage #wapper .col-md-12 .form-dark { margin-top: 50px; }
+
 .checkbox{ position:relative;}
 .checkbox input[type="checkbox"]{ opacity:0;}
 .checkbox .white-text{ padding:0 0 0 30px; cursor:pointer;}
 .form-dark .align-items-center button.btn-success{ font-size:18px;}
 
+/**** input box css **************/
 .md-form .form-control{ padding:5px 0;}
 .md-form i.fa{ font-size:20px; margin:15px 0 0 0;}
 .md-form i.fa.fa-lock{ font-size:25px;}
@@ -19,16 +28,95 @@ a{-webkit-transition:all 0.5s ease;transition:all 0.5s ease;outline:none;text-de
 .form-dark [type="radio"] + label, .form-dark [type="checkbox"] + label {	font-size: 0.8rem;}
 .form-dark [type="checkbox"] + label:before {	top: 2px;	width: 15px;	height: 15px;}
 .form-dark .md-form label {	color: #fff;}
-.form-dark input[type=text]:focus:not([readonly]) {	border-bottom: 1px solid #00C851;	-webkit-box-shadow: 0 1px 0 0 #00C851;	box-shadow: 0 1px 0 0 #00C851;}
+.form-dark input[type=text]:focus:not([readonly]) {	border-bottom: 1px solid #3cecec;	-webkit-box-shadow: 0 1px 0 0 #3cecec;	box-shadow: 0 1px 0 0 #3cecec;}
 .form-dark input[type=text]:focus:not([readonly]) + label {	color: #fff;}
-.form-dark input[type=password]:focus:not([readonly]) {	border-bottom: 1px solid #00C851;	-webkit-box-shadow: 0 1px 0 0 #00C851;	box-shadow: 0 1px 0 0 #00C851;}
+.form-dark input[type=password]:focus:not([readonly]) {	border-bottom: 1px solid #3cecec;	-webkit-box-shadow: 0 1px 0 0 #3cecec;	box-shadow: 0 1px 0 0 #3cecec;}
 .form-dark input[type=password]:focus:not([readonly]) + label {	color: #fff;}
 .form-dark input[type="checkbox"] + label:before {	content: '';	position: absolute;	top: 0;	left: 0;	width: 17px;	height: 17px;	z-index: 0;	border: 1.5px solid #fff;
 	border-radius: 1px;	margin-top: 2px;	-webkit-transition: 0.2s;	transition: 0.2s;}
 .form-dark input[type="checkbox"]:checked + label:before {	top: -4px;	left: -3px;	width: 12px;	height: 22px;	border-style: solid;	border-width: 2px;	border-color: transparent #3cecec #3cecec transparent;	-webkit-transform: rotate(40deg);	-ms-transform: rotate(40deg);	transform: rotate(40deg);	-webkit-backface-visibility: hidden;	-webkit-transform-origin: 100% 100%;	-ms-transform-origin: 100% 100%;	transform-origin: 100% 100%;}
 
+.form-control, .form-control:focus{color: #fff; }
+
+/**************** massages alert css ************/
+.alert { border: 1px solid transparent; border-radius: 50px 0 0 50px; bottom: 0; margin-bottom: 1rem;
+    min-width: 300px;    padding: 0.75rem 1.25rem;    position: fixed;    right: 0;}
 
 /*.container {padding-top:50px;}*/
   
+/****************** Header menu *****************/*
+.hmenu {
+    display: inline-block;
+    list-style: outside none none;
+    margin: 50px 0 0 0;
+    padding: 0;
+    width: 100%;
+}
+
+ .hmenu li{
+    display: inline-block;
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+    width:auto;
+}               
+
+.hmenu li a.btn{
+   float: left;
+    margin: 0;
+    padding:8px 25px;
+    width:auto;
+    color: #fff;
+    background: #3cecec;
+    border-radius:3px; 
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: inherit;
+
+}
+.hmenu li a.btn:hover{ background:#684574 !important; }
+/***************** images page************/*
+.imagespage{ /*background: #fff;*/}
+.imagespage .upload-image{ width: 800px; margin:25px auto 0px auto; padding:30px 15px; background: #fff;}
+
+.upload-image{ text-align: center;}
+.upload-image .up-img{display: inline-block;
+    margin: 0 auto 20px;
+    position: relative;
+    width: 160px;}
+.upload-image .up-img span{  background: #ccc none repeat scroll 0 0;
+    color: #000;
+    display: inline-block;
+    font-weight: 600;
+    margin: 0;
+    padding:10px 15px;
+    width: 160px; border-radius:3px; font-size: 16px; }
+.upload-image .up-img input.upfile{ height: 55px;
+    left: 50%;
+    margin: 0 0 0 -75px;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 160px;
+    z-index: 999;}
+
+.upload-image input.btn{ font-size: 16px;
+    font-weight: 600;
+    min-width: 160px;
+    padding: 13px 15px;
+    text-transform: inherit;}
+
+.table-box{ width:800px; margin:5px auto; padding:15px 15px; background: #fff;}
+
+
+
+/***************** images page************/*
+.imagespage{ /*background: #fff;*/}
+.mappage .bg{ width: 800px; margin: 0 auto; padding:15px; background: #fff;}
+.table{ border: none;}
+
+/***************** video page css **************/
+.videopage .bg{width:auto; margin: 0 auto; padding:15px; background: #fff; text-align: center;}
+.videopage .bg{}
 .center { text-align: center;}
 #canvas-video {width: 640px;height: 480px; border: 1px solid #ccc; }

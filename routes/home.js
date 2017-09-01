@@ -4,7 +4,7 @@ module.exports = function (app, passport) {
         res.render('index');
     });
 
-    // LOGOUT ==============================
+    // Logout
     app.get('/logout', function (req, res) {
         req.logout();
         res.redirect('/');
@@ -16,32 +16,29 @@ module.exports = function (app, passport) {
         });
     });
 
-    // process the login form
+    // login form
     app.post('/login', passport.authenticate('local-login', {
-        successRedirect: '/image', // redirect to the secure profile section
-        failureRedirect: '/login', // redirect back to the signup page if there is an error
-        failureFlash: true // allow flash messages
+        successRedirect: '/image', 
+        failureRedirect: '/login', 
+        failureFlash: true 
     }));
 
-  // SIGNUP =================================
-    // show the signup form
+    // signup form
     app.get('/signup', function (req, res) {
         res.render('signup', {
             message: req.flash('signupMessage')
         });
    });
-    // process the signup form
+    // signup form processing
     app.post('/signup', passport.authenticate('local-signup', {
-        successRedirect: '/profile', // redirect to the secure profile section
-        failureRedirect: '/signup', // redirect back to the signup page if there is an error
-        failureFlash: true // allow flash messages
+        successRedirect: '/profile', 
+        failureRedirect: '/signup', 
+        failureFlash: true 
    }));
 
-    // =============================================================================
-    // AUTHORIZE (ALREADY LOGGED IN / CONNECTING OTHER SOCIAL ACCOUNT) =============
-    // =============================================================================
+    
 
-    // locally --------------------------------
+    // local
     app.get('/connect/local', function (req, res) {
         res.render('connect-local.ejs', {
             message: req.flash('loginMessage')
@@ -49,13 +46,13 @@ module.exports = function (app, passport) {
     });
 
     app.post('/connect/local', passport.authenticate('local-signup', {
-        successRedirect: '/image', // redirect to the secure profile section
-        failureRedirect: '/connect/local', // redirect back to the signup page if there is an error
-        failureFlash: true // allow flash messages
+        successRedirect: '/image', 
+        failureRedirect: '/connect/local', 
+        failureFlash: true
     }));
 };
 
-// route middleware to ensure user is logged in
+// user is logged in check
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated())
         return next();

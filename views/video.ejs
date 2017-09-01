@@ -2,14 +2,30 @@
 <html>
 <% include header%>
 
-    <body>
+    <body class="videopage">
         <div class="page-header text-center">
-            <h1><span class="fa fa-anchor"></span> Find Person</h1>
-            <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+             <div class="hmenu">
+                <ul>
+                  <li><a class="btn btn-default btn-sm" href="/image">Upload Image</a></li>
+                    <li><a class="btn btn-default btn-sm" href="/video">View Video</a></li>
+                    <li><a class="btn btn-default btn-sm" href="/map">View Map</a></li>
+                    <li><a href="/logout" class="btn btn-default btn-sm">Logout</a></li>
+
+                </ul>
+            </div>
+            
+            <h1><img width="40" src="images/slytherin_logo.png"/> Slytherin</h1>
+            
         </div>
+        <br>
+        
         <div class="container">
             <div class="row">
+            
+            <div class="bg">
+
                 <canvas id="canvas-video" width="640" height="480"></canvas>
+            </div>
             </div>
         </div>
         <script src="/socket.io/socket.io.js"></script>
