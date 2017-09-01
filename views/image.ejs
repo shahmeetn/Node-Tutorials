@@ -1,6 +1,14 @@
 <!doctype html>
 <html>
 <% include header%>
+    <script type="text/javascript">
+        var elem = document.createElement("img");
+        elem.setAttribute("src", "images/hydrangeas.jpg");
+        elem.setAttribute("height", "768");
+        elem.setAttribute("width", "1024");
+        elem.setAttribute("alt", "Flower");
+       document.getElementById("showimage").appendChild(elem);
+    </script>
 
     <body>
         <div class="page-header text-center">
@@ -12,6 +20,10 @@
                 <form enctype="multipart/form-data" action="/image/upload" method="post">
                     <input id="upload-input" type="file" name="uploads" multiple="multiple" accept="image/jpg">
                     <input type="submit" value="Upload Image" name="submit" />
+                </form>
+            </div>
+            <div class="imagelist">
+                <form id="showimage" action="/image/delete" method="post">
                 </form>
             </div>
         </div>

@@ -20,8 +20,49 @@ var upload = multer({
 module.exports = function (app, passport) {
     // PROFILE SECTION =========================
     app.get('/image', isLoggedIn, function (req, res) {
+        var params = {
+            CollectionId: 'surveillance'
+            //MaxResults: 20
+        };
+
+        rekognition.listFaces(params, function (err, data) {
+            if (err) console.log(err, err.stack); // an error occurred
+            else console.log(data);           // successful response
+            /*
+            data = {
+             CollectionIds: [
+                "myphotos"
+             ]
+            }
+            */
+        });
         res.render('image.ejs', {
-            user: req.user
+            user: req.user,
+            images: data
+        });
+    });
+
+    app.post('/image/delete', isLoggedIn, function (req, res) {
+        var params = {
+            CollectionId: 'surveillance',
+            FaceIds: [
+                "ff43d742-0c13-5d16-a3e8-03d3f58e980b"
+            ]
+        };
+        rekognition.deleteFaces(params, function (err, data) {
+            if (err) console.log(err, err.stack); // an error occurred
+            else console.log(data);           // successful response
+            /*
+            data = {
+             DeletedFaces: [
+                "ff43d742-0c13-5d16-a3e8-03d3f58e980b"
+             ]
+            }
+            */
+        });
+        res.render('image.ejs', {
+            // user: req.user,
+            // images: data
         });
     });
 
@@ -50,6 +91,7 @@ module.exports = function (app, passport) {
                 }
             });
         });
+
     });
 };
 
