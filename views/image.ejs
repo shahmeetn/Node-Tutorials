@@ -7,7 +7,7 @@
         elem.setAttribute("height", "768");
         elem.setAttribute("width", "1024");
         elem.setAttribute("alt", "Flower");
-       document.getElementById("showimage").appendChild(elem);
+        document.getElementById("showimage").appendChild(elem);
     </script>
 
     <body>
@@ -22,11 +22,23 @@
                     <input type="submit" value="Upload Image" name="submit" />
                 </form>
             </div>
-            <div class="imagelist">
-                <form id="showimage" action="/image/delete" method="post">
-                </form>
+            <div class="row">
+                <table>
+                    <%images.Faces.forEach(function(data){%>
+                        <tr>
+                            <td>
+                                <%=data.ExternalImageId%>
+                            </td>
+                            <td>
+                                <a href="/image/delete/?faceId=<%=data.FaceId%>">delete</a>
+                            </td>
+                        </tr>
+                    <%});%>
+                </table>
+                <%%>
             </div>
         </div>
-<% include footer%>
+        <% include footer%>
     </body>
+
 </html>
